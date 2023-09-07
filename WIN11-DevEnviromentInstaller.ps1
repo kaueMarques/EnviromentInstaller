@@ -27,7 +27,7 @@ $langInstallComand = @(
   	"Microsoft.Teams",
 
    	# OthersCommunication
-    	"Discord.Discord",
+    	"Discord.Discord"
    
 )
 

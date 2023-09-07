@@ -15,6 +15,7 @@ $langInstallComand = @(
 
  
 	#IDEs
+ 	,"Notepad++.Notepad++"
 	,"Microsoft.VisualStudioCode"
 	,"JetBrains.IntelliJIDEA.Community"
 	,"dbeaver.dbeaver"

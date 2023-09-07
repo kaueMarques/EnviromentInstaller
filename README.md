@@ -5,16 +5,15 @@
 
 To enable to use in Windows:
 
-Start Administrator Power Shell
+Start Power Shell in administration mode
 
-```shell
-Get-ExecutionPolicy
-```
+Enable Power Shell Script
+
 ```shell
  Set-ExecutionPolicy RemoteSigned
 ```
 
-Quick install command:
+Run the script
 ```shell
 iex (iwr https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/WIN11-DevEnviromentInstaller.ps1).Content
 ```

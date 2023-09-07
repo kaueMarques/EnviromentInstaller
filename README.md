@@ -11,7 +11,7 @@
  Set-ExecutionPolicy RemoteSigned
 ```
 
-3. Start a instalation 
+3. Start instalation 
 ```shell
 iex (iwr https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/WIN11-DevEnviromentInstaller.ps1).Content
 ```

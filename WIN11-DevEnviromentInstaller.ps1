@@ -18,6 +18,7 @@ $langInstallComand = @(
 	#LOCAL DEVELOPER SERVERs
 	"ApacheFriends.Xampp.8.2 8.2.4",
 	"LeNgocKhoa.Laragon",
+ 	"Docker.DockerDesktop",
 
 	#CODECs
 	"VideoLAN.VLC",

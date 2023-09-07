@@ -8,7 +8,7 @@ packages=(
 	
 	# IDEs
 	code	
-	intellij-idea-community
+	intellij-community
 	dbeaver-ce
 
 	# Codecs

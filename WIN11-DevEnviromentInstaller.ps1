@@ -1,9 +1,14 @@
 $langInstallComand = @(
-	
+
+	#Browser
+ 	"Google.Chrome",
+ 
 	#Langs
 	"Python.Python.3.11", 
 	"Microsoft.OpenJDK.17",
 	"Microsoft.VCRedist.2015+.x64",
+ 	"OpenJS.NodeJS.LTS",
+  	"RubyInstallerTeam.RubyWithDevKit.3.2",
 	
 	#IDEs
 	"Microsoft.VisualStudioCode",
@@ -17,9 +22,12 @@ $langInstallComand = @(
 	#CODECs
 	"VideoLAN.VLC",
 
-	#Corp Communication
+	#Popular Corp Communication
  	"SlackTechnologies.Slack",
-  	"Microsoft.Teams"
+  	"Microsoft.Teams",
+
+   	# OthersCommunication
+    	"Discord.Discord",
    
 )
 

@@ -9,7 +9,10 @@ $langInstallComand = @(
 	"Microsoft.VCRedist.2015+.x64",
  	"OpenJS.NodeJS.LTS",
   	"RubyInstallerTeam.RubyWithDevKit.3.2",
-	
+
+	#Dev Tools
+ 	"Git.Git",
+ 
 	#IDEs
 	"Microsoft.VisualStudioCode",
 	"JetBrains.IntelliJIDEA.Community",

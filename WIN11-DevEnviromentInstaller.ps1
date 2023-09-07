@@ -15,8 +15,12 @@ $langInstallComand = @(
 	"LeNgocKhoa.Laragon",
 
 	#CODECs
-	"VideoLAN.VLC"
+	"VideoLAN.VLC",
 
+	#Corp Communication
+ 	"SlackTechnologies.Slack",
+  	"Microsoft.Teams"
+   
 )
 
 foreach ($command in $langInstallComand) {

@@ -1,37 +1,38 @@
 $langInstallComand = @(
 
+	#Dev Tools
+ 	"Git.Git"
+
 	#Browser
- 	"Google.Chrome",
+ 	,"Google.Chrome"
  
 	#Langs
-	"Python.Python.3.11", 
-	"Microsoft.OpenJDK.17",
-	"Microsoft.VCRedist.2015+.x64",
- 	"OpenJS.NodeJS.LTS",
-  	"RubyInstallerTeam.RubyWithDevKit.3.2",
+	,"Python.Python.3.11" 
+	,"Microsoft.OpenJDK.17"
+	,"Microsoft.VCRedist.2015+.x64"
+ 	,"OpenJS.NodeJS.LTS"
+  	,"RubyInstallerTeam.RubyWithDevKit.3.2"
 
-	#Dev Tools
- 	"Git.Git",
  
 	#IDEs
-	"Microsoft.VisualStudioCode",
-	"JetBrains.IntelliJIDEA.Community",
-	"dbeaver.dbeaver",
+	,"Microsoft.VisualStudioCode"
+	,"JetBrains.IntelliJIDEA.Community"
+	,"dbeaver.dbeaver"
 
 	#LOCAL DEVELOPER SERVERs
-	"ApacheFriends.Xampp.8.2 8.2.4",
-	"LeNgocKhoa.Laragon",
- 	"Docker.DockerDesktop",
+	,"ApacheFriends.Xampp.8.2 8.2.4"
+	,"LeNgocKhoa.Laragon"
+ 	,"Docker.DockerDesktop"
 
 	#CODECs
-	"VideoLAN.VLC",
+	,"VideoLAN.VLC"
 
 	#Popular Corp Communication
- 	"SlackTechnologies.Slack",
-  	"Microsoft.Teams",
+ 	,"SlackTechnologies.Slack"
+  	,"Microsoft.Teams"
 
    	# OthersCommunication
-    	"Discord.Discord"
+    	,"Discord.Discord"
    
 )
 

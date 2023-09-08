@@ -49,7 +49,7 @@ foreach ($command in $langInstallComand) {
 
 
 $mensagem = @"
-Some apps have been set to install automatically during the installation of the tools. I've opened the Task Manager for you to disable them manually.
+Some apps have been set to start automatically during the installation of the tools. I've opened the Task Manager for you to disable them manually.
 "@
 
 Add-Type -AssemblyName System.Windows.Forms

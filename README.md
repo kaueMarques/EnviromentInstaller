@@ -49,15 +49,21 @@ So, observing this, I've put together an easily installable script with the most
 <img src="https://img.shields.io/badge/Notepad++-90E59A?style=for-the-badge&logo=notepad%2B%2B&logoColor=white" alt="Notepad++"> 
 <img src="https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white" alt="IntelliJ IDEA"> 
 <img src="https://img.shields.io/badge/DBeaver-1075A1?style=for-the-badge&logo=dbeaver&logoColor=white" alt="DBeaver">
-
 </div>
  
 <div align="left">
-  
   <h3>💬 Popular Corp Communication</h3>
   <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" alt="Slack"> 
   <img src="https://img.shields.io/badge/Teams-6264A7?style=for-the-badge&logo=microsoft-teams&logoColor=white" alt="Teams"> 
    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"> 
+</div>
+
+</div>
+ 
+<div align="left">
+  <h3>Extras</h3>
+  <img src="https://img.shields.io/badge/Chrome-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Google Chrome">
+  <img src="https://img.shields.io/badge/VLC%20Media%20Player-FF8800?style=for-the-badge&logo=vlc-media-player&logoColor=white" alt="VLC Media Player">
 
 </div>
 

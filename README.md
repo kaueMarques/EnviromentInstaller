@@ -61,7 +61,7 @@ So, observing this, I've put together an easily installable script with the most
 </div>
  
 <div align="left">
-  <h3>Extras</h3>
+  <h3>🧩 Extras</h3>
   <img src="https://img.shields.io/badge/Chrome-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Google Chrome">
   <img src="https://img.shields.io/badge/VLC%20Media%20Player-FF8800?style=for-the-badge&logo=vlc-media-player&logoColor=white" alt="VLC Media Player">
 

@@ -91,7 +91,7 @@ sudo curl -s https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/m
 <p>Execute as sudo</p>
 
 ```shell
-sudo curl -s https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/Linux-DevEnviromentInstaller.sh | bash
+sudo curl -s https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/MacOS-DevEnviromentInstaller.sh | bash
 ```
 
 </div>

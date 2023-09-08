@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Enviroment Installer</h1>
-  <i>For simplify dev's life 
+  <i>simplify dev's life 
   <br>Write 4 All </i>
  <br>
  <br>

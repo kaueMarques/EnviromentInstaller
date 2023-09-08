@@ -24,6 +24,8 @@ $langInstallComand = @(
 	,"ApacheFriends.Xampp.8.2 8.2.4"
 	,"LeNgocKhoa.Laragon"
  	,"Docker.DockerDesktop"
+  	,"RedHat.Podman"
+   	,"RedHat.Podman-Desktop"
 
 	#CODECs
 	,"VideoLAN.VLC"

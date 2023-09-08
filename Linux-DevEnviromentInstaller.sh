@@ -1,7 +1,7 @@
 #!/bin/bash
 
  # List of packages to install
-  langInstallComand=(
+langInstallComand=(
     # Dev Tools
     "git"
 

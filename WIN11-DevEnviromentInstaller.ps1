@@ -3,6 +3,7 @@ $langInstallComand = @(
 	#Dev Tools
  	"Git.Git"
   	,"Oracle.VirtualBox"
+   	,"WinSCP.WinSCP"
 
 	#Browser
  	,"Google.Chrome"

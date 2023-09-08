@@ -1,42 +1,63 @@
 #!/bin/bash
 
-langInstallComand=(
-	# Dev Tools
-	"git"
+# Determine the package manager based on the system
+if [ -f /etc/os-release ]; then
+  source /etc/os-release
+  case $ID in
+    "centos" | "fedora")
+      package_manager="yum"
+      ;;
+    "ubuntu" | "debian")
+      package_manager="apt"
+      ;;
+    *)
+      echo "Error: Unable to determine the package management system."
+      exit 1
+      ;;
+  esac
 
-	# Browser
-	"google-chrome-stable"
+  # List of packages to install
+  langInstallComand=(
+    # Dev Tools
+    "git"
 
-	# Langs
-	"python3.11"
-	"openjdk-17-jdk"
-	"wine32"
-	"nodejs"
-	"ruby-full"
+    # Browser
+    "google-chrome-stable"
 
-	# IDEs
-	"notepad-plus-plus"
-	"code"
-	"openjdk-17-jdk"
-	"dbeaver-ce"
+    # Langs
+    "python3.11"
+    "openjdk-17-jdk"
+    "wine32"
+    "nodejs"
+    "ruby-full"
 
-	# LOCAL DEVELOPER SERVERs
-	"apache2"
-	"laragon"
-	"docker"
+    # IDEs
+    "notepad-plus-plus"
+    "code"
+    "openjdk-17-jdk"
+    "dbeaver-ce"
 
-	# CODECs
-	"vlc"
+    # LOCAL DEVELOPER SERVERs
+    "apache2"
+    "laragon"
+    "docker"
 
-	# Popular Corp Communication
-	"slack-desktop"
-	"teams"
+    # CODECs
+    "vlc"
 
-	# Others Communication
-	"discord"
-)
+    # Popular Corp Communication
+    "slack-desktop"
+    "teams"
 
-for command in "${langInstallComand[@]}"; do
-	echo "========================================"
-	sudo apt install -y "$command"
-done
+    # Others Communication
+    "discord"
+  )
+
+  # Install packages
+  for command in "${langInstallComand[@]}"; do
+    sudo $package_manager install -y "$command"
+  done
+else
+  echo "Error: File /etc/os-release not found. Unable to identify the package management system."
+  exit 1
+fi

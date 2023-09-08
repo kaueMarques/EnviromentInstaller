@@ -3,6 +3,7 @@
 langInstallComand=(
 	# Dev Tools
 	"git"
+ 	"virtualbox"
 
 	# Browser
 	"google-chrome"
@@ -22,6 +23,7 @@ langInstallComand=(
 	"xampp"
 	"laragon"
 	"docker"
+ 	"podman"
 
 	# CODECs
 	"vlc"

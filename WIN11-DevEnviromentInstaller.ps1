@@ -2,6 +2,7 @@ $langInstallComand = @(
 
 	#Dev Tools
  	"Git.Git"
+  	,"Oracle.VirtualBox"
 
 	#Browser
  	,"Google.Chrome"

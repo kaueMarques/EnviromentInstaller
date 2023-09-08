@@ -34,12 +34,20 @@ So, observing this, I've put together an easily installable script with the most
 
 <div align="left">
  <h2>🖥️ Suported Servers</h3>
-  <img src="https://img.shields.io/badge/XAMPP-FB7A24?style=for-the-badge&logo=xampp&logoColor=white" alt="XAMPP">
-  <img src="https://img.shields.io/badge/Laragon-00A79D?style=for-the-badge&logo=laragon&logoColor=white" alt="Laragon">
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
   <img src="https://img.shields.io/badge/Podman-553E56?style=for-the-badge&logo=podman&logoColor=white" alt="Podman">
   <img src="https://img.shields.io/badge/VirtualBox-183A61?style=for-the-badge&logo=virtualbox&logoColor=white" alt="VirtualBox">
 
+<details>
+<summary>Apps for Windows</summary>
+<ol>
+  <img src="https://img.shields.io/badge/MobaXterm-000000?style=for-the-badge&logo=mobaxterm&logoColor=white" alt="MobaXterm">
+  <img src="https://img.shields.io/badge/XAMPP-FB7A24?style=for-the-badge&logo=xampp&logoColor=white" alt="XAMPP">
+  <img src="https://img.shields.io/badge/Laragon-00A79D?style=for-the-badge&logo=laragon&logoColor=white" alt="Laragon">
+</ol>
+</details>
+
+  
 </div>
 
 

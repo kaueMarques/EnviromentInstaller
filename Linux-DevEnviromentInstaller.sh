@@ -1,22 +1,6 @@
 #!/bin/bash
 
-# Determine the package manager based on the system
-if [ -f /etc/os-release ]; then
-  source /etc/os-release
-  case $ID in
-    "centos" | "fedora")
-      package_manager="yum"
-      ;;
-    "ubuntu" | "debian")
-      package_manager="apt"
-      ;;
-    *)
-      echo "Error: Unable to determine the package management system."
-      exit 1
-      ;;
-  esac
-
-  # List of packages to install
+ # List of packages to install
   langInstallComand=(
     # Dev Tools
     "git"
@@ -53,7 +37,22 @@ if [ -f /etc/os-release ]; then
     "discord"
   )
 
-  # Install packages
+
+if [ -f /etc/os-release ]; then
+  source /etc/os-release
+  case $ID in
+    "centos" | "fedora")
+      package_manager="yum"
+      ;;
+    "ubuntu" | "debian")
+      package_manager="apt"
+      ;;
+    *)
+      echo "Error: Unable to determine the package management system."
+      exit 1
+      ;;
+  esac
+
   for command in "${langInstallComand[@]}"; do
     sudo $package_manager install -y "$command"
   done

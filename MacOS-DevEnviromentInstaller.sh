@@ -15,13 +15,10 @@ langInstallComand=(
 	"ruby"
 
 	# IDEs
-	"notepad-plus-plus"
 	"visual-studio-code"
 	"dbeaver-community"
 
 	# LOCAL DEVELOPER SERVERs
-	"xampp"
-	"laragon"
 	"docker"
  	"podman"
 

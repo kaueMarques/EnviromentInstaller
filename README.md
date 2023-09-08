@@ -38,6 +38,7 @@ So, observing this, I've put together an easily installable script with the most
   <img src="https://img.shields.io/badge/Laragon-00A79D?style=for-the-badge&logo=laragon&logoColor=white" alt="Laragon">
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
   <img src="https://img.shields.io/badge/Podman-553E56?style=for-the-badge&logo=podman&logoColor=white" alt="Podman">
+  <img src="https://img.shields.io/badge/VirtualBox-183A61?style=for-the-badge&logo=virtualbox&logoColor=white" alt="VirtualBox">
 
 </div>
 

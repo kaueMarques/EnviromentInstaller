@@ -12,7 +12,7 @@
 
 
 <div align="left">
-  <h2>About</h2>
+  <h2>📃 About</h2>
   <span>Who hasn't, after reformatting their operating system, spent a lot of time setting up a productive environment? Wasting time downloading support for multiple languages, various IDEs, and essential systems?
 <br>
 So, observing this, I've put together an easily installable script with the most popular tools to make installation more practical with just a few commands</span>

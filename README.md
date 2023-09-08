@@ -92,7 +92,7 @@ So, observing this, I've put together an easily installable script with the most
  <li>Start the installation with the following command.</li>
 
 ```powershell
-iex (iwr https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/WIN11-DevEnviromentInstaller.ps1).Content
+powershell iex (iwr https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/WIN11-DevEnviromentInstaller.ps1).Content
 ```
  </ol>
 

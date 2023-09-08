@@ -60,7 +60,7 @@ So, observing this, I've put together an easily installable script with the most
 
 <br>
 <div aling="left">
- <h1>Quick start without need to clone project</h1>
+ <h1>📥 Quick start without need to clone project</h1>
 
 <h2>Windows</h2>
 <ol>

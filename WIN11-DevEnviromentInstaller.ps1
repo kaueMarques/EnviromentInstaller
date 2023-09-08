@@ -4,6 +4,7 @@ $langInstallComand = @(
  	"Git.Git"
   	,"Oracle.VirtualBox"
    	,"WinSCP.WinSCP"
+    	,"Mobatek.MobaXterm"
 
 	#Browser
  	,"Google.Chrome"

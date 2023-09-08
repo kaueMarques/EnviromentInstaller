@@ -86,4 +86,12 @@ iex (iwr https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/maste
 sudo curl -s https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/Linux-DevEnviromentInstaller.sh | bash
 ```
 
+
+<h2>MacOS</h2>
+<p>Execute as sudo</p>
+
+```shell
+sudo curl -s https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/Linux-DevEnviromentInstaller.sh | bash
+```
+
 </div>

@@ -1,24 +1,42 @@
 #!/bin/bash
 
-packages=(
-    
-	# Langs	
-	python3.11	
-	openjdk-17-jdk
-	
+langInstallComand=(
+	# Dev Tools
+	"git"
+
+	# Browser
+	"google-chrome-stable"
+
+	# Langs
+	"python3.11"
+	"openjdk-17-jdk"
+	"wine32"
+	"nodejs"
+	"ruby-full"
+
 	# IDEs
-	code	
-	intellij-community
-	dbeaver-ce
+	"notepad-plus-plus"
+	"code"
+	"openjdk-17-jdk"
+	"dbeaver-ce"
 
-	# Codecs
-	vlc
+	# LOCAL DEVELOPER SERVERs
+	"apache2"
+	"laragon"
+	"docker"
 
-	# Corp Communication
+	# CODECs
+	"vlc"
 
+	# Popular Corp Communication
+	"slack-desktop"
+	"teams"
+
+	# Others Communication
+	"discord"
 )
 
-for package in "${packages[@]}"; do
-    echo "========================================"
-    sudo apt-get install -y "$package"
+for command in "${langInstallComand[@]}"; do
+	echo "========================================"
+	sudo apt install -y "$command"
 done

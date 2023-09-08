@@ -81,15 +81,14 @@ So, observing this, I've put together an easily installable script with the most
 
 <h2>Windows</h2>
 <ol>
-  <li>Run PowerShell as an administrator.</li>
-  <li>Run the following command to allow script execution.</li>
-
+  
+  <li>Enable Powershell Script in Terminal</li>
 
  ```powershell
  Set-ExecutionPolicy RemoteSigned
 ```
 
- <li>Start the installation with the following command.</li>
+ <li>Start the installation</li>
 
 ```powershell
 powershell iex (iwr https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/WIN11-DevEnviromentInstaller.ps1).Content

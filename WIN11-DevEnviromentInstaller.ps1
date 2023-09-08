@@ -49,10 +49,10 @@ foreach ($command in $langInstallComand) {
 
 
 $mensagem = @"
-Some apps have been set to install automatically during the installation of the tools. I've opened the Task Manager for you to disable them manually
+Some apps have been set to install automatically during the installation of the tools. I've opened the Task Manager for you to disable them manually.
 "@
 
-[System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
-[System.Windows.Forms.MessageBox]::Show($mensagem, "Warning!", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+Add-Type -AssemblyName System.Windows.Forms
+[System.Windows.Forms.MessageBox]::Show($mensagem, "Warning!", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information) | Out-Null
 
 Start-Process -FilePath "taskmgr.exe"

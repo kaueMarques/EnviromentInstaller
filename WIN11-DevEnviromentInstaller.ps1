@@ -46,3 +46,13 @@ foreach ($command in $langInstallComand) {
 	Write-Host "========================================"
 	winget install $command	
 }
+
+
+$mensagem = @"
+Some apps have been set to install automatically during the installation of the tools. I've opened the Task Manager for you to disable them manually
+"@
+
+[System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+[System.Windows.Forms.MessageBox]::Show($mensagem, "Warning!", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
+
+Start-Process -FilePath "taskmgr.exe"

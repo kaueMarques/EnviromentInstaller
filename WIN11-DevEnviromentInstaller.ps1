@@ -74,7 +74,7 @@ function Show-Menu {
 
         switch ($choice) {
             "x" {
-                break
+                exit
             }
             default {
                 Install-Selected-Categories

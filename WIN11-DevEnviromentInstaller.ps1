@@ -1,59 +1,89 @@
-$langInstallComand = @(
-
-	#Dev Tools
- 	"Git.Git"
-  	,"Oracle.VirtualBox"
-   	,"WinSCP.WinSCP"
-    	,"Mobatek.MobaXterm"
-, "-e --id Canonical.Ubuntu.2204" 
-
-	#Browser
- 	,"Google.Chrome"
- 
-	#Langs
-	,"Python.Python.3.11" 
-	,"Microsoft.OpenJDK.17"
-	,"Microsoft.VCRedist.2015+.x64"
- 	,"OpenJS.NodeJS.LTS"
-  	,"RubyInstallerTeam.RubyWithDevKit.3.2"
-
- 
-	#IDEs
- 	,"Notepad++.Notepad++"
-	,"Microsoft.VisualStudioCode"
-	,"JetBrains.IntelliJIDEA.Community"
-	,"dbeaver.dbeaver"
-
-	#LOCAL DEVELOPER SERVERs
-	,"ApacheFriends.Xampp.8.2 8.2.4"
-	,"LeNgocKhoa.Laragon"
- 	,"Docker.DockerDesktop"
-  	,"RedHat.Podman"
-   	,"RedHat.Podman-Desktop"
-
-	#CODECs
-	,"VideoLAN.VLC"
-
-	#Popular Corp Communication
- 	,"SlackTechnologies.Slack"
-  	,"Microsoft.Teams"
-
-   	# OthersCommunication
-    	,"Discord.Discord"
-   
-)
-
-foreach ($command in $langInstallComand) {
-	Write-Host "========================================"
-	winget install $command	
+function List-AppsInCategory($category) {
+    $apps = $jsonContent.$category
+    $apps | ForEach-Object {
+        Write-Host "-  $_"
+    }
 }
 
+function Install-AppsInCategory($category) {
+    Write-Host "Starting installation of category '$category'..."
+    $apps = $jsonContent.$category
+    $apps | ForEach-Object {
+        Write-Host "Installing $_..."
+        Start-Process "winget" -ArgumentList "install $_" -Wait
+        Write-Host "$_ has been successfully installed."
+    }
+    Write-Host "All apps in category '$category' have been installed."
+}
 
-$mensagem = @"
-Some apps have been set to start automatically during the installation of the tools. I've opened the Task Manager for you to disable them manually.
-"@
+function List-Categories {
+    Clear-Host
+    Write-Host "Available categories:"
+    $categories = $jsonContent.PSObject.Properties.Name
+    for ($i = 0; $i -lt $categories.Count; $i++) {
+        $category = $categories[$i]
+        Write-Host "$($i + 1) - ${category}:"
+        List-AppsInCategory $category
+        Write-Host ""
+    }
+    Write-Host "====================="
+    Write-Host "Choose the category number you want to install or:"
+    Write-Host "0 - Install all"
+    Write-Host "x - Exit"
+}
 
-Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.MessageBox]::Show($mensagem, "Warning!", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information) | Out-Null
+function Install-Selected-Categories {
+    $selectedCategories = Read-Host "To confirm, enter '0' or 'x' to return to the menu"
+    $selectedCategories = $selectedCategories -split ',' | ForEach-Object { $_.Trim() }
 
-Start-Process -FilePath "taskmgr.exe"
+    foreach ($categoryNumber in $selectedCategories) {
+        switch ($categoryNumber) {
+            "0" {
+                Install-All-Apps
+                break
+            }
+            "x" {
+                return
+            }
+            default {
+                if ($categoryNumber -ge 1 -and $categoryNumber -le $jsonContent.PSObject.Properties.Name.Count) {
+                    $category = $jsonContent.PSObject.Properties.Name[$categoryNumber - 1]
+                    Install-AppsInCategory $category
+                }
+                else {
+                    Write-Host "Invalid category number: $categoryNumber. Please try again."
+                }
+            }
+        }
+    }
+}
+
+function Install-All-Apps {
+    Write-Host "Starting installation of all apps..."
+    $jsonContent.PSObject.Properties.Name | ForEach-Object {
+        Install-AppsInCategory $_
+    }
+    Write-Host "All apps in all categories have been installed."
+}
+
+function Show-Menu {
+    while ($true) {
+        List-Categories
+        Write-Host ""
+        $choice = Read-Host " "
+
+        switch ($choice) {
+            "x" {
+                break
+            }
+            default {
+                Install-Selected-Categories
+            }
+        }
+    }
+}
+
+$jsonUrl = "https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/win-apps.json"
+$jsonContent = Invoke-RestMethod -Uri $jsonUrl
+
+Show-Menu

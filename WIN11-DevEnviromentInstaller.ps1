@@ -5,6 +5,7 @@ $langInstallComand = @(
   	,"Oracle.VirtualBox"
    	,"WinSCP.WinSCP"
     	,"Mobatek.MobaXterm"
+, "-e --id Canonical.Ubuntu.2204" 
 
 	#Browser
  	,"Google.Chrome"

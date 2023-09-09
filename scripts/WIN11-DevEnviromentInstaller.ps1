@@ -1,4 +1,4 @@
-$jsonAppListURL = "https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/win-apps.json"
+$jsonAppListURL = "https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/repos/win-apps.json"
 $jsonAppContent = Invoke-RestMethod -Uri $jsonAppListURL
 
 function List-AppsInCategory($category) {

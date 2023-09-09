@@ -41,12 +41,12 @@ function Install-All-Apps {
 }
 function Show-Menu {
     $i = 1
-        List-Categories
-		Write-Host ""
-        $choice = Read-Host "choice"
-        switch ($choice) {
-            "x" { exit }
-            default { Install-Selected-Categories }
-        }
+    List-Categories
+	Write-Host ""
+    $choice = Read-Host "choice"
+    switch ($choice) {
+        "x" { exit }
+        default { Install-Selected-Categories }
+    }
 }
 Show-Menu

@@ -1,83 +1,56 @@
 function List-AppsInCategory($category) {
-    $apps = $jsonContent.$category
-    $apps | ForEach-Object {
-        Write-Host "-  $_"
-    }
+    $jsonContent.$category | ForEach-Object { Write-Host "-  $_" }
 }
 
 function Install-AppsInCategory($category) {
-    Write-Host "Starting installation of category '$category'..."
-    $apps = $jsonContent.$category
-    $apps | ForEach-Object {
-        Write-Host "Installing $_..."
+    Write-Host "Installing apps in category '$category'..."
+    $jsonContent.$category | ForEach-Object {
+        Write-Host "Installing $_..." -NoNewline
         Start-Process "winget" -ArgumentList "install $_" -Wait
-        Write-Host "$_ has been successfully installed."
+        Write-Host " done."
     }
-    Write-Host "All apps in category '$category' have been installed."
 }
 
 function List-Categories {
     Clear-Host
     Write-Host "Available categories:"
-    $categories = $jsonContent.PSObject.Properties.Name
-    for ($i = 0; $i -lt $categories.Count; $i++) {
-        $category = $categories[$i]
-        Write-Host "$($i + 1) - ${category}:"
+    $jsonContent.PSObject.Properties.Name | ForEach-Object {
+        $category = $_
+        Write-Host ("{0} - {1}:" -f $i, $category)
         List-AppsInCategory $category
         Write-Host ""
+        $i++
     }
-    Write-Host "====================="
     Write-Host "0 - Install all"
     Write-Host "x - Exit"
 }
 
 function Install-Selected-Categories {
-    $selectedCategories = Read-Host "To confirm, enter '0' or 'x' to return to the menu"
-    $selectedCategories = $selectedCategories -split ',' | ForEach-Object { $_.Trim() }
-
-    foreach ($categoryNumber in $selectedCategories) {
-        switch ($categoryNumber) {
-            "0" {
-                Install-All-Apps
-                break
-            }
-            "x" {
-                return
-            }
-            default {
-                if ($categoryNumber -ge 1 -and $categoryNumber -le $jsonContent.PSObject.Properties.Name.Count) {
-                    $category = $jsonContent.PSObject.Properties.Name[$categoryNumber - 1]
-                    Install-AppsInCategory $category
-                }
-                else {
-                    Write-Host "Invalid category number: $categoryNumber. Please try again."
-                }
-            }
-        }
+    $selectedCategories = Read-Host "confirm with Categorie number or press 'x' to return" -split ','
+    
+    $selectedCategories | ForEach-Object {
+        $categoryNumber = [int]$_
+        if ($categoryNumber -eq 0) { Install-All-Apps }
+        elseif ($categoryNumber -eq $null) { return }
+        elseif ($jsonContent.PSObject.Properties.Name[$categoryNumber - 1]) { Install-AppsInCategory $jsonContent.PSObject.Properties.Name[$categoryNumber - 1] }
+        else { Write-Host "Invalid category number: $_. Please try again." }
     }
 }
 
 function Install-All-Apps {
-    Write-Host "Starting installation of all apps..."
-    $jsonContent.PSObject.Properties.Name | ForEach-Object {
-        Install-AppsInCategory $_
-    }
-    Write-Host "All apps in all categories have been installed."
+    Write-Host "Installing all apps in all categories..."
+    $jsonContent.PSObject.Properties.Name | ForEach-Object { Install-AppsInCategory $_ }
 }
 
 function Show-Menu {
+    $i = 1
     while ($true) {
         List-Categories
-        Write-Host ""
-        $choice = Read-Host " "
-
+		Write-Host ""
+        $choice = Read-Host "choice"
         switch ($choice) {
-            "x" {
-                exit
-            }
-            default {
-                Install-Selected-Categories
-            }
+            "x" { exit }
+            default { Install-Selected-Categories }
         }
     }
 }

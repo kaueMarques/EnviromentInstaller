@@ -27,7 +27,6 @@ function List-Categories {
         Write-Host ""
     }
     Write-Host "====================="
-    Write-Host "Choose the category number you want to install or:"
     Write-Host "0 - Install all"
     Write-Host "x - Exit"
 }

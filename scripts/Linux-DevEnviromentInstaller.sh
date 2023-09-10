@@ -14,12 +14,7 @@ Detect-Linux-Distribution() {
                 package_manager="dnf"
                 ;;
             rhel|centos|amzn)
-                if [[ "$ID" == "rhel" || "$ID" == "centos" || "$ID" == "amzn" ]]; then
-                    package_manager="yum"
-                else
-                    echo "Unsupported distribution: $ID"
-                    exit 1
-                fi
+                package_manager="yum"
                 ;;
             suse|opensuse-leap|opensuse-tumbleweed)
                 package_manager="zypper"

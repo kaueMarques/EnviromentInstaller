@@ -45,7 +45,7 @@ Install-AppsInCategory() {
     apps=($(echo "$jsonAppContent" | jq -r ".\"$category\"[]"))
     for app in "${apps[@]}"; do
         echo "Installing $app..."
-        appInstaller $app
+        $appInstaller $app
     done
 }
 

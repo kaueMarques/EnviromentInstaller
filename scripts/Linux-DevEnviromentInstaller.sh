@@ -32,8 +32,6 @@ Detect-Linux-Distribution() {
     echo "Recommended package manager: $package_manager"
 }
 
-Detect-Linux-Distribution
-
 List-AppsInCategory() {
     category="$1"
     echo "$jsonAppContent" | jq -r ".\"$category\"[]"
@@ -114,4 +112,5 @@ Show-Menu() {
     done
 }
 
+Detect-Linux-Distribution
 Show-Menu

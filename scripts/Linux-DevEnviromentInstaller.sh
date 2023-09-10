@@ -3,33 +3,41 @@
 jsonAppListURL="https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/repos/linux-apps.json"
 jsonAppContent=$(curl -s "$jsonAppListURL")
 
-if [ -f "/etc/os-release" ]; then
-    source /etc/os-release
-    case "$ID" in
-        ubuntu|debian)
-            package_manager="apt"
-            ;;
-        fedora)
-            package_manager="dnf"
-            ;;
-        rhel|centos|amzn)
-            package_manager="yum"
-            ;;
-        suse|opensuse-leap|opensuse-tumbleweed)
-            package_manager="zypper"
-            ;;
-        *)
-            echo "Unsupported distribution: $ID"
-            exit 1
-            ;;
-    esac
-else
-    echo "Unable to detect the Linux distribution."
-    exit 1
-fi
+Detect-Linux-Distribution() {
+    if [ -f "/etc/os-release" ]; then
+        source /etc/os-release
+        case "$ID" in
+            ubuntu|debian)
+                package_manager="apt"
+                ;;
+            fedora|ol) 
+                package_manager="dnf"
+                ;;
+            rhel|centos|amzn)
+                if [[ "$ID" == "rhel" || "$ID" == "centos" || "$ID" == "amzn" ]]; then
+                    package_manager="yum"
+                else
+                    echo "Unsupported distribution: $ID"
+                    exit 1
+                fi
+                ;;
+            suse|opensuse-leap|opensuse-tumbleweed)
+                package_manager="zypper"
+                ;;
+            *)
+                echo "Unsupported distribution: $ID"
+                exit 1
+                ;;
+        esac
+    else
+        echo "Unable to detect the Linux distribution."
+        exit 1
+    fi
+    echo "Detected distribution: $ID"
+    echo "Recommended package manager: $package_manager"
+}
 
-echo "Detected distribution: $ID"
-echo "Recommended package manager: $package_manager"
+Detect-Linux-Distribution
 
 List-AppsInCategory() {
     category="$1"
@@ -47,7 +55,7 @@ Install-AppsInCategory() {
             "apt")
                 sudo apt-get install -y "$app"
                 ;;
-            "dnf")
+            "dnf") 
                 sudo dnf install -y "$app"
                 ;;
             "yum")

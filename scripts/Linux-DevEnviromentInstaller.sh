@@ -2,6 +2,7 @@
 
 jsonAppListURL="https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/repos/linux-apps.json"
 jsonAppContent=$(curl -s "$jsonAppListURL")
+appInstaller=""
 
 Detect-Linux-Distribution() {
     if [ -f "/etc/os-release" ]; then
@@ -30,6 +31,7 @@ Detect-Linux-Distribution() {
     fi
     echo "Detected distribution: $ID"
     echo "Recommended package manager: $package_manager"
+    appInstaller="sudo $package_manager install -y "
 }
 
 List-AppsInCategory() {
@@ -43,21 +45,7 @@ Install-AppsInCategory() {
     apps=($(echo "$jsonAppContent" | jq -r ".\"$category\"[]"))
     for app in "${apps[@]}"; do
         echo "Installing $app..."
-        
-        case "$package_manager" in
-            "apt")
-                sudo apt-get install -y "$app"
-                ;;
-            "dnf") 
-                sudo dnf install -y "$app"
-                ;;
-            "yum")
-                sudo yum install -y "$app"
-                ;;
-            "zypper")
-                sudo zypper install -y "$app"
-                ;;
-        esac
+        appInstaller $app
     done
 }
 

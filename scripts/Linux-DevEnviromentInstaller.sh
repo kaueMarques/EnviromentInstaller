@@ -89,15 +89,13 @@ Install-All-Apps() {
 
 Show-Menu() {
     i=1
-    while true; do
-        List-Categories
-        echo ""
-        read -p "Enter your choice: " choice
-        case "$choice" in
-            "x") exit ;;
-            *) Install-Selected-Categories ;;
-        esac
-    done
+    List-Categories
+    echo ""
+    read -p "Enter your choice: " choice
+    case "$choice" in
+        "x") exit ;;
+        *) Install-Selected-Categories ;;
+    esac
 }
 
 Detect-Linux-Distribution

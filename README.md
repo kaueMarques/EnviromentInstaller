@@ -92,7 +92,7 @@ So, observing this, I've put together an easily installable script with the most
  <li>Start instalation</li>
  
 ```powershell
-iex (iwr https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/scripts/WIN11-DevEnviromentInstaller.ps1).Content
+iex (iwr https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/scripts/win-installer.ps1).Content
 ```
  </ol>
 
@@ -100,7 +100,7 @@ iex (iwr https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/maste
 <p>Execute as sudo</p>
 
 ```shell
-sudo curl -s https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/scripts/Linux-DevEnviromentInstaller.sh | bash
+sudo curl -s https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/scripts/linux-installer.sh | bash
 ```
 
 
@@ -108,7 +108,7 @@ sudo curl -s https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/m
 <p>Execute as sudo</p>
 
 ```shell
-sudo curl -s https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/scripts/MacOS-DevEnviromentInstaller.sh | bash
+sudo curl -s https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/scripts/mac-installer.sh | bash
 ```
 
 </div>

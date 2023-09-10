@@ -1,17 +1,38 @@
 #!/bin/bash
 
-jsonAppListURL="https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/repos/mac-apps.json"
+jsonAppListURL="https://raw.githubusercontent.com/kaueMarques/EnviromentInstaller/master/repos/linux-appList.json"
 jsonAppContent=$(curl -s "$jsonAppListURL")
+appInstaller=""
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    package_manager="brew"
-else
-    echo "Unsupported operating system: $OSTYPE"
-    exit 1
-fi
-
-echo "Detected operating system: macOS"
-echo "Recommended package manager: $package_manager"
+Detect-Linux-Distribution() {
+    if [ -f "/etc/os-release" ]; then
+        source /etc/os-release
+        case "$ID" in
+            ubuntu|debian)
+                package_manager="apt"
+                ;;
+            fedora|ol) 
+                package_manager="dnf"
+                ;;
+            rhel|centos|amzn)
+                package_manager="yum"
+                ;;
+            suse|opensuse-leap|opensuse-tumbleweed)
+                package_manager="zypper"
+                ;;
+            *)
+                echo "Unsupported distribution: $ID"
+                exit 1
+                ;;
+        esac
+    else
+        echo "Unable to detect the Linux distribution."
+        exit 1
+    fi
+    echo "Detected distribution: $ID"
+    echo "Recommended package manager: $package_manager"
+    appInstaller="sudo $package_manager install -y "
+}
 
 List-AppsInCategory() {
     category="$1"
@@ -24,12 +45,7 @@ Install-AppsInCategory() {
     apps=($(echo "$jsonAppContent" | jq -r ".\"$category\"[]"))
     for app in "${apps[@]}"; do
         echo "Installing $app..."
-        
-        case "$package_manager" in
-            "brew")
-                brew install "$app"
-                ;;
-        esac
+        $appInstaller $app
     done
 }
 
@@ -73,15 +89,14 @@ Install-All-Apps() {
 
 Show-Menu() {
     i=1
-    while true; do
-        List-Categories
-        echo ""
-        read -p "Enter your choice: " choice
-        case "$choice" in
-            "x") exit ;;
-            *) Install-Selected-Categories ;;
-        esac
-    done
+    List-Categories
+    echo ""
+    read -p "Enter your choice: " choice
+    case "$choice" in
+        "x") exit ;;
+        *) Install-Selected-Categories ;;
+    esac
 }
 
+Detect-Linux-Distribution
 Show-Menu

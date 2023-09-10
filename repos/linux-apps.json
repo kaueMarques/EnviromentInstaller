@@ -1,0 +1,33 @@
+{
+    "Dev Tools": [
+        "virtualbox"
+    ],
+    "Browser": [
+        "google-chrome-stable"
+    ],
+    "Langs": [
+        "python3.11",
+        "openjdk-17-jdk",
+        "nodejs",
+        "ruby-full"
+    ],
+    "IDEs": [
+        "code",
+        "dbeaver-ce"
+    ],
+    "LOCAL DEVELOPER SERVERs": [
+        "apache2",
+        "docker",
+        "podman"
+    ],
+    "CODECs": [
+        "vlc"
+    ],
+    "Popular Corp Communication": [
+        "slack-desktop",
+        "teams"
+    ],
+    "Others Communication": [
+        "discord"
+    ]
+}

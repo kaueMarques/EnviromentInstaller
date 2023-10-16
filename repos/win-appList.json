@@ -1,33 +1,26 @@
 {
     "Dev Tools": [
         "Git.Git",
-        "Oracle.VirtualBox",
         "WinSCP.WinSCP",
         "Mobatek.MobaXterm",
         "-e --id Canonical.Ubuntu.2204"
     ],
     "Browser": ["Google.Chrome"],
     "Langs": [
-        "Python.Python.3.11",
+        "Python.Python.2.11",
         "Microsoft.OpenJDK.17",
         "Microsoft.VCRedist.2015+.x64",
-        "OpenJS.NodeJS.LTS",
         "RubyInstallerTeam.RubyWithDevKit.3.2"
     ],
     "IDEs": [
         "Notepad++.Notepad++",
         "Microsoft.VisualStudioCode",
-        "JetBrains.IntelliJIDEA.Community",
         "dbeaver.dbeaver"
     ],
     "LOCAL DEVELOPER SERVERs": [
         "ApacheFriends.Xampp.8.2 8.2.4",
-        "LeNgocKhoa.Laragon",
-        "Docker.DockerDesktop",
-        "RedHat.Podman",
-        "RedHat.Podman-Desktop"
+        "LeNgocKhoa.Laragon"
     ],
     "CODECs": ["VideoLAN.VLC"],
-    "Popular Corp Communication": ["SlackTechnologies.Slack", "Microsoft.Teams"],
     "OthersCommunication": ["Discord.Discord"]
 }
